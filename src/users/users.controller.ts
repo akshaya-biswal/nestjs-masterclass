@@ -1,23 +1,17 @@
-import { Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { CreateUserDto } from './dtos/create-user.dto';
+import { GetUsersParamDto } from './dtos/get-users-param.dto';
 
 @Controller('users')
 export class UsersController {
-  @Get()
-  public getUsers() {
-    return 'You sent a get request to users endpoints';
-  }
-
-  @Get('/:id')
-  public getUser(@Param() params: any) {
-    return {
-      params,
-      message: 'You sent a get request to a single user endpoints',
-    };
+  @Get(':/id?')
+  public getUsers(@Param() getUsersParamDto: GetUsersParamDto) {
+    return getUsersParamDto;
   }
 
   @Post()
-  public createUsers() {
-    return 'You sent a get request to users endpoints';
+  public createUsers(@Body() createUserDto: CreateUserDto) {
+    return createUserDto;
   }
 
   public editUsers() {
