@@ -4,7 +4,7 @@ import { GetUsersParamDto } from './dtos/get-users-param.dto';
 
 @Controller('users')
 export class UsersController {
-  @Get(':/id?')
+  @Get('/:id?')
   public getUsers(@Param() getUsersParamDto: GetUsersParamDto) {
     return getUsersParamDto;
   }
