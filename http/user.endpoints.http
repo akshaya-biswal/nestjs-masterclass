@@ -11,3 +11,10 @@ Content-Type: application/json
   "email": "hello.world@gmail.com",
   "password": "Hulk@1995"
 }
+
+PATCH http://localhost:3000/users
+Content-Type: application/json
+{
+  "email": "hello.world@gmail.com",
+  "password": "Hulk"
+}
