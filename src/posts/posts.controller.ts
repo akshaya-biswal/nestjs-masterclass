@@ -7,6 +7,6 @@ export class PostsController {
 
   @Get('/:userId?')
   public getPosts(@Param('userId') userId: string) {
-    this.postsService.findAll(userId);
+    return this.postsService.findAll(userId);
   }
 }
