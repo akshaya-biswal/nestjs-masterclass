@@ -1,3 +1,6 @@
 ## Get request for post controller
 
 GET http://localhost:3000/posts/1
+
+POST http://localhost:3000/posts
+Content-Type: application/json
